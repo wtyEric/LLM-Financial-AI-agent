@@ -65,4 +65,3 @@ def get_stock_data(ticker_symbol, period='6mo', interval='1d'):
     
     return result
 
-print(get_stock_data(ticker_symbol = "0700.HK"))
