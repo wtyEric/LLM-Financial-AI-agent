@@ -1,10 +1,7 @@
 import yfinance as yf
-import numpy as np
 import ta
-import pandas as pd  
-import json
 
-def get_stock_data(ticker_symbol, period='6mo', interval='1d'):
+def get_stock_data(stock_name,ticker_symbol, period='6mo', interval='1d'):
         # Create ticker object
     ticker = yf.Ticker(ticker_symbol)
     # Fetch data for the last 20 years
@@ -43,6 +40,8 @@ def get_stock_data(ticker_symbol, period='6mo', interval='1d'):
     
     # Create the desired JSON format
     result = {
+        'stock_name':stock_name,
+        'stock_ID':ticker_symbol,
         'open': indicators_data['open'].tolist(),
         'high': indicators_data['high'].tolist(),
         'low': indicators_data['low'].tolist(),
