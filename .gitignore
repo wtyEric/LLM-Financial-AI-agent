@@ -1,3 +1,7 @@
 # Ignore the .env file
 .env
 
+# Python cache directories
+__pycache__/
+*.py[cod]
+*$py.class
