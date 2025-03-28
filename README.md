@@ -18,9 +18,10 @@ This project leverages the Deepseek AI model to analyze stock prices and provide
 
 ```json
 {
-    "stock_name": "Company Name",
-    "stock_id": "TICKER_SYMBOL",
-    "result": "xxxxxxx"
+   "stock_name":"騰訊控股",
+   "stock_ID":"0700.HK",
+   "Notice":"技術面顯示MACD柱狀圖負值收窄但仍在零軸下方，EMA5下穿EMA10形成死叉，短期 趨勢偏空。RSI_9(48.41)接近超賣區，隨機指標%K(20.31)與%D(18.99)超賣，暗示反彈機會。聰明錢關注503.5關鍵支撐（近期低點），若跌破可能加 速下跌。建議在503.5附近輕倉試多，突破516.5阻力加倉，停損設在500.0整數關口下方。基本面市盈率23.17合理但市淨率4.79偏高，短期以技術反彈 為主邏輯。",
+   "result":"Long"
 }
 ```
 
