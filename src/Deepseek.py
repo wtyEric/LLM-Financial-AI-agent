@@ -9,7 +9,7 @@ client = OpenAI(api_key=deepseek_API_key, base_url="https://api.deepseek.com")
 
 
 def deepseek_prediction(stock_data):
-    content =f'以下是有關股票的詳細數據以Array格式装下最近25天的各種數據:{stock_data}.'+'讀取數據後請以你全球第一的專業股票短期投資經驗从態分析，技術指標分析,交易策略,(Smart Money Concepts)聪明钱交易策略和基本面分析。最後以JSON格式回應: example: { stock_name:"騰訊控股", stock_ID:"0700.HK", Notice:"為什麼做多或做空? 我們應該在什麼價格買入或停損", result:":Long or Short"}'
+    content =f'以下是有關股票的詳細數據以Array格式装下最近25天的各種數據:{stock_data}.'+'讀取數據後請以你全球第一的專業股票短期投資經驗从圖表形態分析，技術指標分析,交易策略,(Smart Money Concepts)聪明钱交易策略和基本面分析。最後以JSON格式回應: example: { stock_name:"騰訊控股", stock_ID:"0700.HK", Notice:"為什麼做多或做空? 我們應該在什麼價格買入或停損", result:":Long or Short"}'
 
     response = client.chat.completions.create(
         model="deepseek-reasoner",
