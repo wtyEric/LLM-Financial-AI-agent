@@ -59,7 +59,7 @@ python app.py
 
 2. Make API requests:
 ```bash
-curl -X POST http://localhost:8000/analyze \
+curl -X POST http://localhost:5000/predict \
      -H "Content-Type: application/json" \
      -d '{"stock_id": "AAPL"}'
 ```
