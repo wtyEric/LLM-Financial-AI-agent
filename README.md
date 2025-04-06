@@ -64,12 +64,6 @@ curl -X POST http://localhost:5000/predict \
      -d '{"stock_id": "AAPL"}'
 ```
 
-## Configuration
-
-The API can be configured through environment variables:
-- `DEEPSEEK_API_KEY`: Your Deepseek API key
-- `PORT`: Server port (default: 8000)
-
 
 
 ## Disclaimer
