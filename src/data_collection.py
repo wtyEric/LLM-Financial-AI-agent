@@ -27,15 +27,30 @@ def get_stock_data(stock_name,ticker_symbol, period='6mo', interval='1d'):
     stochastic = ta.momentum.StochasticOscillator(high=df['high'], low=df['low'], close=df['close'], window=14, smooth_window=3)
     df['stoch_%K'] = stochastic.stoch()
     df['stoch_%D'] = stochastic.stoch_signal()
-    info = ticker.info
-    fundamental_data = {
-        '市盈率TTM': info.get("trailingPE", "N/A"), 
-        '52周最高': info.get("fiftyTwoWeekHigh", "N/A"),  
-        '市淨率': info.get("priceToBook", "N/A"),  
-        '流通值': info.get("marketCap", "N/A"),  
-        '52周最低': info.get("fiftyTwoWeekLow", "N/A"),  
-        '股息率TTM': info.get("dividendYield", "N/A"),  
-    }
+
+
+    try:
+        info = ticker.info
+        fundamental_data = {
+            '市盈率TTM': info.get("trailingPE", "N/A"), 
+            '52周最高': info.get("fiftyTwoWeekHigh", "N/A"),  
+            '市淨率': info.get("priceToBook", "N/A"),  
+            '流通值': info.get("marketCap", "N/A"),  
+            '52周最低': info.get("fiftyTwoWeekLow", "N/A"),  
+            '股息率TTM': info.get("dividendYield", "N/A"),  
+        }
+    except Exception as e:
+        fundamental_data = {
+            '市盈率TTM': "N/A", 
+            '52周最高': "N/A",  
+            '市淨率':  "N/A",  
+            '流通值':  "N/A",  
+            '52周最低':  "N/A",  
+            '股息率TTM': "N/A",  
+        }
+
+
+
     indicators_data = df.tail(25)
     
     # Create the desired JSON format
